@@ -13,6 +13,7 @@ import br.com.amil.statistic.Award;
 import br.com.amil.statistic.MatchStatistic;
 import br.com.amil.statistic.PlayerStatistic;
 import br.com.amil.statistic.WeaponRanking;
+import java.util.Scanner;
 
 public class App {
 	
@@ -21,11 +22,16 @@ public class App {
 	public static void main(String[] args) {
 
 		Reader reader = new Reader();
-
+         
+                Scanner sc = new Scanner(System.in);
+                System.out.print("Informe o endereço do arquivo de log: ");
+                String logEndereco = sc.next();
+                        
+                 //String logEndereco =  "C:/Users/MoreiraP/project/pre-dojo/pre-dojo/src/test/resources/log-statistic-test.txt";
+                
 		try {
 
-			File file = new File(
-					"C:/Users/MoreiraP/project/pre-dojo/pre-dojo/src/test/resources/log-statistic-test.txt");
+			File file = new File(logEndereco.trim());
 
 			if (file.exists()) {
 				InputStream is = new FileInputStream(file);
